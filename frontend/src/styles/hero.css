@@ -700,3 +700,16 @@ button{
 font-family:inherit;
 
 }
+/* Make hero buttons clickable */
+.hero-buttons {
+  position: relative;
+  z-index: 20;
+}
+
+.primary-btn,
+.secondary-btn {
+  position: relative;
+  z-index: 21;
+  pointer-events: auto;
+  cursor: pointer;
+}

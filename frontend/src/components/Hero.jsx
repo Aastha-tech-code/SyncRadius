@@ -1,5 +1,5 @@
 import "../styles/Hero.css";
-
+import { useNavigate } from "react-router-dom";
 import {
   Users,
   Calendar,
@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 
 function Hero() {
+  const navigate = useNavigate();
   return (
     <section className="hero">
 
@@ -35,10 +36,13 @@ function Hero() {
 </p>
           <div className="hero-buttons">
 
-            <button className="primary-btn">
-              Get Started
-              <ArrowRight size={18}/>
-            </button>
+          <button
+  className="primary-btn"
+  onClick={() => navigate("/signup")}
+>
+  Get Started
+  <ArrowRight size={18} />
+</button>
 
             <button className="secondary-btn">
               Explore Communities

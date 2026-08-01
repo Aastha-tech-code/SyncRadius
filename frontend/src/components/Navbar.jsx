@@ -1,18 +1,34 @@
 import "../styles/Navbar.css";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
     <nav className="navbar">
-      <div className="logo">
+
+      <Link to="/" className="logo">
         SyncRadius
-      </div>
+      </Link>
 
       <ul className="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Communities</a></li>
-        <li><a href="#">Activities</a></li>
-        <li><a href="#">Login</a></li>
+
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+
+        <li>
+          <a href="#features">Communities</a>
+        </li>
+
+        <li>
+          <a href="#how-it-works">Activities</a>
+        </li>
+
+        <li>
+          <Link to="/login">Login</Link>
+        </li>
+
       </ul>
+
     </nav>
   );
 }

@@ -1,0 +1,4 @@
+import { MapPin, Users, ArrowUpRight } from 'lucide-react';
+export default function CommunityCard({ community, onJoin, onLeave, busy }) {
+  return <article className="content-card community-card"><div className="card-topline"><span className="category-pill">{community.category || 'General'}</span><span className="member-count"><Users size={14}/>{community.member_count || 0}</span></div><h3>{community.name}</h3><p>{community.description || 'A space to connect with people nearby.'}</p><div className="card-meta"><MapPin size={15}/>{community.location || 'Location not specified'}</div><div className="card-actions">{community.is_member ? <button className="button button-light" disabled={busy} onClick={() => onLeave(community.id)}>Leave community</button> : <button className="button button-primary" disabled={busy} onClick={() => onJoin(community.id)}>Join community <ArrowUpRight size={16}/></button>}</div></article>;
+}
